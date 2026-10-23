@@ -413,3 +413,5 @@ html body.lp-vas .vq article .v4-me { margin-top: auto !important; }
 /* rails: a sideways swipe never triggers browser back, every rail snaps to the card start */
 html body.lp-vas :is(.v4-quotes, .v4-mo-grid, .vq-cards, .vs-grid-8, .cv5-list) { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
 @media (max-width: 760px) { html body.lp-vas :is(.vq-cards, .cv5-list) > * { scroll-snap-align: start !important; } html body.lp-vas :is(.vq-cards, .cv5-list) { scroll-padding-inline: 20px; } }
+/* decision cards on phones: text keeps the same side padding as the button */
+@media (max-width: 760px) { html body.lp-vas .vq article :is(.v4-area, h3, .v4-before, .v4-after-txt) { margin-left: 18px !important; margin-right: 18px !important; } html body.lp-vas .vq article .v4-me { margin-left: 18px !important; margin-bottom: 18px !important; } }
