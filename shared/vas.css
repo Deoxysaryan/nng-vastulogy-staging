@@ -116,7 +116,7 @@ html body.lp-vas .vs-inner { grid-template-columns: 1fr !important; }
 html body.lp-vas .vs-main { width: 100% !important; max-width: none !important; }
 html body.lp-vas .vs-grid li { cursor: pointer; }
 html body.lp-vas .vs-pic img { object-fit: cover; }
-@media (min-width: 761px) { html body.lp-vas .vs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
+@media (min-width: 1100px) { html body.lp-vas .vs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
 
 /* ---------- How I work with you: four promises beside her photo ---------- */
 html body.lp-vas .wy4-cards-4 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px !important; }
@@ -188,3 +188,28 @@ html body.lp-vas .v-dial button:disabled { opacity: .3; cursor: default; }
 html body.lp-vas .mt-eyebrow, html body.lp-vas .v-approach .eyebrow { font-size: 12px !important; letter-spacing: .18em !important; }
 html body.lp-vas .vs-go { min-width: 44px; min-height: 44px; }
 @media (min-width: 761px) { html body.lp-vas .v-approach { width: min(1240px, calc(100% - 64px)) !important; margin-inline: auto !important; box-sizing: border-box; } }
+/* desktop: the plan section's decorative leaves no longer push the page sideways */
+html body.lp-vas .v-approach { overflow-x: clip; }
+html body.lp-vas main { overflow-x: clip; }
+/* hero: the four hero facts repeat the fact strip and sat over the form on desktop */
+html body.lp-vas .vh-feats { display: none !important; }
+@media (min-width: 761px) { html body.lp-vas .vh-copy { padding-bottom: 48px !important; } }
+html body.lp-vas .v-approach { position: relative; overflow: clip; }
+@media (min-width: 761px) { html body.lp-vas .v-approach :is(.v5-leaf-l, .v5-leaf-r, .v5-blob) { display: none; } }
+@media (min-width: 761px) and (max-width: 1399px) {
+  html body.lp-vas .vh-copy { width: 52% !important; max-width: none !important; }
+  html body.lp-vas .vh-visual { left: 52% !important; right: 0 !important; width: auto !important; }
+  html body.lp-vas .vh-copy .v4-program { font-size: clamp(48px, 6.4vw, 80px) !important; }
+  html body.lp-vas .vh-copy h1 { font-size: clamp(30px, 3.6vw, 44px) !important; }
+}
+/* services: four across only on wide screens, two across on tablets */
+@media (min-width: 761px) and (max-width: 1099px) { html body.lp-vas .vs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+
+/* hero form in the narrower copy column: two fields per row, button full width; hero facts hidden where they would sit over the form */
+@media (min-width: 761px) and (max-width: 1399px) {
+  html body.lp-vas .v4-hf-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) !important; }
+  html body.lp-vas .v4-hf-row .v4-hf-btn { grid-column: 1 / -1; margin-top: 0 !important; width: 100%; justify-content: space-between; }
+  html body.lp-vas .v4-hf-row3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  html body.lp-vas .vh-feats { display: none !important; }
+}
+@media (min-width: 761px) and (max-width: 900px) { html body.lp-vas .v4-hf-row { grid-template-columns: minmax(0, 1fr) !important; } }
