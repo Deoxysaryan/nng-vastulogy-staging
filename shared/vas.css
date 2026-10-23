@@ -1,0 +1,190 @@
+/* Vastulogy LP v2: Vastulogy-specific refinements over styles.css and v4.css. Same palette, same layout. */
+html body.lp-vas :is(h1, h2, h3) { text-wrap: balance; }
+html body.lp-vas .n-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Hero: program word and two-step form in the original copy column ---------- */
+html body.lp-vas .vh-kicker { flex-wrap: wrap; row-gap: 2px; }
+html body.lp-vas .vh-kicker em { font-style: normal; color: #9A6C2E; margin-left: 4px; }
+html body.lp-vas .vh-copy .v4-program { margin: 6px 0 4px; }
+html body.lp-vas .vh-copy h1 { max-width: 13em; }
+html body.lp-vas .vh-copy .v4-hf { margin-top: 20px; }
+@media (max-width: 340px) { html body.lp-vas .v4-program { font-size: 40px !important; } }
+@media (max-width: 760px) {
+  html body.lp-vas .vh-visual { height: min(78vw, 310px) !important; }
+  html body.lp-vas .vh-photo img { object-position: 46% 8% !important; }
+  html body.lp-vas .vh-feats { display: none !important; }
+  html body.lp-vas .vh-copy { padding-bottom: 26px !important; }
+  html body.lp-vas .vh-copy h1 { font-size: 32px !important; line-height: 1.12; }
+}
+
+/* ---------- Meet: intro film in the original arch, face never cropped ---------- */
+html body.lp-vas .mt-arch.v4-film { position: relative; overflow: hidden; background: #F3EBDD; }
+html body.lp-vas .mt-arch.v4-film video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+html body.lp-vas .mt-arch.v4-film.is-playing video { object-fit: contain; background: #10261A; }
+html body.lp-vas .mt-arch .v4-film-play { position: absolute; left: 50% !important; right: auto !important; bottom: 12% !important; top: auto !important; transform: translateX(-50%) !important; translate: none !important; white-space: nowrap; z-index: 2; }
+html body.lp-vas .mt-arch.is-playing .v4-film-play { display: none; }
+html body.lp-vas .mt-facts strong { white-space: nowrap; }
+html body.lp-vas .mt-facts em { font-size: 12px !important; line-height: 1.35; }
+html body.lp-vas .mt-cta .wa-btn { width: auto; }
+
+/* ---------- Decisions: cards full width (her photo removed), pictures cross-fade from doubt to settled ---------- */
+html body.lp-vas .vq-cards { width: 100% !important; }
+@media (min-width: 761px) { html body.lp-vas .vq-copy { max-width: 760px; } }
+html body.lp-vas .vq-cards article { padding: 0 0 16px !important; overflow: hidden; }
+html body.lp-vas .vq-cards .vq-no { display: none; }
+html body.lp-vas .vq-pic { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 20px 20px 0 0; background: #EFE6D6; }
+html body.lp-vas .vq-pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+html body.lp-vas .vq-pic .vq-after { opacity: 0; animation: v-fade 7s ease-in-out infinite; animation-delay: calc(var(--i, 0) * 1.2s); }
+@keyframes v-fade { 0%, 38% { opacity: 0; } 48%, 88% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { html body.lp-vas .vq-pic .vq-after { animation: none; } }
+html body.lp-vas .vq-cards article > .v4-area { margin: 16px 16px 0; }
+html body.lp-vas .vq-cards article > h3 { margin: 6px 16px 0; }
+html body.lp-vas .vq-cards article > .v4-before, html body.lp-vas .vq-cards article > .v4-after-txt { margin-left: 16px; margin-right: 16px; flex: none; }
+html body.lp-vas .vq-cards article > .v4-before { margin-top: 8px; }
+html body.lp-vas .vq-cards article > .v4-after-txt { margin-top: 8px; margin-bottom: 14px; }
+html body.lp-vas .vq-cards article > .v4-me { align-self: flex-start; margin: auto 16px 0; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: linear-gradient(160deg, #1D4A37, #123A2B); color: #F4E2B8; font-weight: 600; font-size: 14.5px; text-decoration: none; }
+html body.lp-vas .vq-lead { text-wrap: balance; }
+@media (max-width: 760px) {
+  html body.lp-vas .vq-pic { aspect-ratio: 1 / 1; }
+  html body.lp-vas .vq-inner > svg, html body.lp-vas .vq .vh-spark { display: none !important; }
+  html body.lp-vas .vq h2 { font-size: 28px !important; }
+}
+@media (max-width: 400px) { html body.lp-vas .vq h2 { font-size: 26px !important; } html body.lp-vas .vq h2 br { display: none; } html body.lp-vas .vq h2 em { display: block; } }
+
+/* ---------- Free direction check ---------- */
+html body.lp-vas .v-approach .approach-copy .eyebrow { text-transform: uppercase; }
+html body.lp-vas .v-tool { position: relative; overflow: hidden; margin: 20px 0 22px; padding: 22px 18px 20px; border-radius: 20px; background: linear-gradient(160deg, #1D4A37, #123A2B); color: #F4ECDC; box-shadow: 0 0 0 1px rgb(227 194 122 / .35), 0 34px 60px -34px rgb(16 38 26 / .8); text-align: left; }
+html body.lp-vas .v-tool::before { content: ""; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(closest-side, rgb(227 194 122 / .22), transparent); pointer-events: none; }
+html body.lp-vas .v-tool-k { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 12.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #E3C27A; }
+html body.lp-vas .n-pulse { position: relative; flex: none; width: 10px; height: 10px; border-radius: 50%; background: #E3C27A; }
+html body.lp-vas .n-pulse::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid #E3C27A; opacity: 0; animation: v-ping 1.8s ease-out infinite; }
+@keyframes v-ping { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(1.4); opacity: 0; } }
+html body.lp-vas .v-tool-q { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font-size: 15px; font-weight: 600; color: #FFF; }
+html body.lp-vas .v-tool-q b { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #E3C27A; color: #123A2B; font-size: 13px; }
+html body.lp-vas .v-rooms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 18px; }
+html body.lp-vas .v-rooms button { min-height: 44px; padding: 6px 8px; border: 1px solid rgb(227 194 122 / .45); border-radius: 12px; background: rgb(255 253 248 / .06); color: #F4ECDC; font: inherit; font-size: 14px; line-height: 1.2; cursor: pointer; transition: background .2s, color .2s, box-shadow .2s; }
+html body.lp-vas .v-rooms button.is-on { background: #E3C27A; color: #123A2B; font-weight: 600; box-shadow: 0 8px 20px -10px rgb(227 194 122 / .9); }
+html body.lp-vas .v-dial { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: min(100%, 300px); margin: 18px auto 6px; padding: 10px; border-radius: 18px; background: rgb(255 253 248 / .05); box-shadow: inset 0 0 0 1px rgb(227 194 122 / .35); }
+html body.lp-vas .v-dial-n { position: absolute; left: 50%; top: -14px; translate: -50% 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #E3C27A; color: #123A2B; font-size: 12px; font-weight: 700; }
+html body.lp-vas .v-dial button { aspect-ratio: 1.25 / 1; min-height: 52px; border: 0; border-radius: 10px; background: rgb(255 253 248 / .08); color: #F4ECDC; font: inherit; cursor: pointer; transition: background .2s, color .2s, box-shadow .2s, transform .2s; }
+html body.lp-vas .v-dial button b { font-family: var(--display, Marcellus, serif); font-weight: 400; font-size: 20px; letter-spacing: .04em; }
+html body.lp-vas .v-dial button[data-dir="C"] b { font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0; }
+html body.lp-vas .v-dial button.is-on { background: #E3C27A; color: #123A2B; box-shadow: 0 0 0 2px #FFE7A8, 0 10px 22px -8px rgb(227 194 122 / .9); }
+html body.lp-vas .v-tool-err { margin: 6px 0 0; font-size: 13px; color: #F2B8A0; text-align: center; }
+html body.lp-vas .v-tool-err:empty { display: none; }
+html body.lp-vas .v-tool-btn { display: flex; justify-content: center; gap: 10px; width: 100%; min-height: 50px; margin-top: 14px; animation: v-glow 2.4s ease-in-out infinite; }
+html body.lp-vas .v-tool.is-done .v-tool-btn { animation: none; }
+@keyframes v-glow { 0%, 100% { box-shadow: 0 0 0 0 rgb(227 194 122 / .55); } 50% { box-shadow: 0 0 0 8px rgb(227 194 122 / 0); } }
+html body.lp-vas .v-out { display: grid; gap: 10px; margin-top: 16px; }
+html body.lp-vas .v-out[hidden] { display: none; }
+html body.lp-vas .v-out.is-in { animation: v-in .5s ease both; }
+@keyframes v-in { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+html body.lp-vas .v-zone { padding: 14px; border-radius: 16px; background: rgb(255 253 248 / .08); box-shadow: inset 0 0 0 1px rgb(227 194 122 / .35); }
+html body.lp-vas .v-zone-k { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #E3C27A; }
+html body.lp-vas .v-zone b { display: block; margin: 4px 0 2px; font-family: var(--display, Marcellus, serif); font-weight: 400; font-size: 34px; line-height: 1.1; color: #FFF; }
+html body.lp-vas .v-zone p:last-child { margin: 0; font-size: 14px; line-height: 1.45; color: rgb(244 236 220 / .85); }
+html body.lp-vas .v-verdict { justify-self: start; margin: 0; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; background: #E3C27A; color: #123A2B; }
+html body.lp-vas .v-verdict[data-k="ok"] { background: #F4ECDC; }
+html body.lp-vas .v-verdict[data-k="look"] { background: transparent; color: #FFE7A8; box-shadow: inset 0 0 0 1.5px #E3C27A; }
+html body.lp-vas .v-why { margin: 0; font-size: 14.5px; line-height: 1.5; color: #F4ECDC; }
+html body.lp-vas .v-fix { padding: 12px 14px; border-left: 3px solid #E3C27A; border-radius: 4px 12px 12px 4px; background: rgb(255 253 248 / .06); }
+html body.lp-vas .v-fix-k { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #E3C27A; }
+html body.lp-vas .v-fix p:last-child { margin: 0; font-size: 14.5px; line-height: 1.5; color: #FFF; }
+html body.lp-vas .v-note { margin: 2px 0 0; font-size: 14px; line-height: 1.5; color: rgb(244 236 220 / .85); }
+html body.lp-vas .v-tool-cta { justify-self: start; text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { html body.lp-vas .n-pulse::after, html body.lp-vas .v-tool-btn { animation: none; } }
+@media (max-width: 400px) { html body.lp-vas .v-tool-k { letter-spacing: .1em; font-size: 12px; } html body.lp-vas .v-rooms button { font-size: 13px; padding: 6px 4px; } }
+@media (max-width: 300px) { html body.lp-vas .v-rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* plan illustration: the checked state glows its compass */
+html body.lp-vas .v5-plan.is-checked { box-shadow: 0 0 0 2px #C9A25A, 0 30px 50px -30px rgb(60 50 30 / .5); }
+
+/* steps: one slim three-step strip, not three tall boxes */
+html body.lp-vas .v-approach .reading-points { position: relative; display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px !important; margin: 18px 0 0 !important; padding: 6px 0 0 !important; overflow: visible !important; grid-column: 1 / -1; }
+html body.lp-vas .v-approach .reading-points::before { content: ""; position: absolute; left: 16.6%; right: 16.6%; top: 30px; height: 1px; background: linear-gradient(90deg, #C9A25A, rgb(201 162 90 / .3)); }
+html body.lp-vas .v-approach .reading-points li { position: relative; display: flex !important; flex-direction: column; align-items: center; gap: 8px; min-height: 0 !important; padding: 0 !important; background: none !important; box-shadow: none !important; border: 0 !important; text-align: center; transform: none !important; overflow: visible !important; color: inherit !important; }
+html body.lp-vas .v-approach .reading-points li::before, html body.lp-vas .v-approach .reading-points li::after { display: none !important; }
+html body.lp-vas .v-approach .reading-points li > svg { position: relative; z-index: 1; box-sizing: border-box; width: 48px !important; height: 48px !important; margin: 0 !important; padding: 12px; border-radius: 50%; background: #FFF8EA !important; box-shadow: 0 0 0 1.5px #C9A25A; color: #1D4A37 !important; transition: color .4s, filter .4s, transform .4s; }
+html body.lp-vas .v-approach .reading-points h3 { margin: 0 !important; font-size: 15px !important; line-height: 1.25; color: #10261A !important; }
+html body.lp-vas .v-approach .reading-points p { margin: 0 !important; font-size: 13px !important; line-height: 1.35; color: #56635C !important; }
+html body.lp-vas .v-approach .reading-points .v5-chev, html body.lp-vas .v-approach .reading-points .v5-step-bar { display: none !important; }
+html body.lp-vas .v-approach .reading-points li.is-lit > svg { color: #8A5A12 !important; transform: scale(1.1); filter: drop-shadow(0 0 5px rgb(235 180 70 / 1)) drop-shadow(0 0 10px rgb(235 180 70 / .9)); }
+html body.lp-vas .v-approach .reading-points li.is-lit h3 { color: #9A6C2E !important; }
+
+/* ---------- Services: no photo, four tiles, whole tile opens the form ---------- */
+html body.lp-vas .vs-inner { grid-template-columns: 1fr !important; }
+html body.lp-vas .vs-main { width: 100% !important; max-width: none !important; }
+html body.lp-vas .vs-grid li { cursor: pointer; }
+html body.lp-vas .vs-pic img { object-fit: cover; }
+@media (min-width: 761px) { html body.lp-vas .vs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
+
+/* ---------- How I work with you: four promises beside her photo ---------- */
+html body.lp-vas .wy4-cards-4 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px !important; }
+html body.lp-vas .wy4-cards-4 article { background: none !important; box-shadow: none !important; border: 0 !important; padding: 0 !important; min-height: 0 !important; display: flex; gap: 12px; align-items: flex-start; }
+html body.lp-vas .wy4-cards-4 h3 { margin: 0; }
+html body.lp-vas .wy4-cards-4 p { margin: 2px 0 0; text-wrap: pretty; }
+@media (prefers-reduced-motion: no-preference) {
+  html body.lp-vas .wy4-cards-4 article { opacity: 0; translate: 0 10px; transition: opacity .6s ease, translate .6s ease; }
+  html body.lp-vas .wy4-cards-4.is-in article { opacity: 1; translate: 0 0; }
+  html body.lp-vas .wy4-cards-4.is-in article:nth-child(2) { transition-delay: .15s; }
+  html body.lp-vas .wy4-cards-4.is-in article:nth-child(3) { transition-delay: .3s; }
+  html body.lp-vas .wy4-cards-4.is-in article:nth-child(4) { transition-delay: .45s; }
+  html body.lp-vas .wy4-cards-4 .wy4-ic svg { animation: v-iconart 4.8s ease-in-out infinite; }
+  html body.lp-vas .wy4-cards-4 article:nth-child(2) .wy4-ic svg { animation-delay: 1.2s; }
+  html body.lp-vas .wy4-cards-4 article:nth-child(3) .wy4-ic svg { animation-delay: 2.4s; }
+  html body.lp-vas .wy4-cards-4 article:nth-child(4) .wy4-ic svg { animation-delay: 3.6s; }
+}
+@keyframes v-iconart { 0%, 30%, 100% { color: inherit; filter: none; transform: none; } 10% { color: #B8862F; filter: drop-shadow(0 0 4px rgb(240 200 110 / 1)) drop-shadow(0 0 10px rgb(240 200 110 / .8)); transform: scale(1.15); } }
+html body.lp-vas .wy4-ic { overflow: visible !important; }
+
+/* ---------- Floating buttons ---------- */
+html body.lp-vas.n-top .v4-fabs { opacity: 0; pointer-events: none; }
+html body.lp-vas.n-calc-in-view .v4-fabs { opacity: 0; pointer-events: none; }
+html body.lp-vas .v4-fabs { transition: opacity .25s ease; }
+@media (max-width: 760px) {
+  html body.lp-vas .v4-fabs { right: 12px; gap: 10px; bottom: calc(14px + env(safe-area-inset-bottom)); }
+  html body.lp-vas .v4-fab { width: 48px; height: 48px; }
+  html body.lp-vas .v4-fab-wa svg { width: 26px; height: 26px; }
+  html body.lp-vas .v4-fab-form svg { width: 22px; height: 22px; }
+}
+/* four films in one row on wide screens; summary line for a film without a spoken quote */
+@media (min-width: 1100px) { html body.lp-vas .cv5-list > .cv5-card { flex: 0 0 calc((100% - 54px) / 4) !important; max-width: calc((100% - 54px) / 4) !important; } }
+html body.lp-vas .cv5-say { margin: 6px 0 0; font-family: var(--display, Marcellus, serif); font-size: 16px; line-height: 1.45; color: #1F2A24; }
+
+/* ---- pass 2: phones ---- */
+html body.lp-vas .mt-eyebrow::after { content: none !important; }
+@media (max-width: 760px) {
+  html body.lp-vas .v-approach { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box; }
+  /* how I work with you: her photo beside the four promises */
+  html body.lp-vas .wy4-copy { display: grid !important; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 14px; align-items: center; }
+  html body.lp-vas .wy4-copy > .wy4-kicker, html body.lp-vas .wy4-copy > h2 { grid-column: 1 / -1; }
+  html body.lp-vas .wy4-copy > h2 { margin-bottom: 4px; }
+  html body.lp-vas .wy4-photo-m { grid-column: 1; width: 100% !important; height: 300px !important; margin: 0 !important; border-radius: 120px 120px 18px 18px !important; overflow: hidden; }
+  html body.lp-vas .wy4-photo-m img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  html body.lp-vas .wy4-cards-4 { grid-column: 2; grid-template-columns: 1fr !important; gap: 14px !important; margin: 0 !important; }
+  html body.lp-vas .wy4-cards-4 article { gap: 10px; }
+  html body.lp-vas .wy4-cards-4 .wy4-ic { flex: none; width: 38px !important; height: 38px !important; }
+  html body.lp-vas .wy4-cards-4 .wy4-ic svg { width: 20px; height: 20px; }
+  html body.lp-vas .wy4-cards-4 h3 { font-size: 15.5px !important; line-height: 1.2; }
+  html body.lp-vas .wy4-cards-4 p { font-size: 13px !important; line-height: 1.35; }
+}
+html body.lp-vas .wy4 ~ .en2 .en2-head { display: block !important; }
+html body.lp-vas .v-dial button:disabled { opacity: .3; cursor: default; }
+/* decisions: the heading sat under the removed photo's overlap */
+@media (max-width: 760px) { html body.lp-vas .vq-inner { margin-top: 0 !important; padding-top: 44px !important; } }
+/* tool section: one column that never grows past the screen; the plan scales down to fit */
+@media (max-width: 760px) {
+  html body.lp-vas .v-approach { grid-template-columns: minmax(0, 1fr) !important; }
+  html body.lp-vas .v-approach > * { min-width: 0; max-width: 100%; }
+  html body.lp-vas .v-approach .v5-plan { width: 100% !important; box-sizing: border-box; }
+  html body.lp-vas .v-approach .v5-plan > svg { width: 100% !important; height: auto !important; }
+}
+@media (max-width: 380px) {
+  html body.lp-vas .v-approach .visual-key { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; width: 100% !important; }
+  html body.lp-vas .v-approach .visual-key button { min-width: 0 !important; width: auto !important; padding-inline: 2px !important; }
+  html body.lp-vas .v-approach .visual-key strong { font-size: 13px !important; white-space: normal !important; overflow-wrap: anywhere; }
+  html body.lp-vas .v-approach .v5-plan { padding-inline: 10px !important; }
+}
+html body.lp-vas .mt-eyebrow, html body.lp-vas .v-approach .eyebrow { font-size: 12px !important; letter-spacing: .18em !important; }
+html body.lp-vas .vs-go { min-width: 44px; min-height: 44px; }
+@media (min-width: 761px) { html body.lp-vas .v-approach { width: min(1240px, calc(100% - 64px)) !important; margin-inline: auto !important; box-sizing: border-box; } }
