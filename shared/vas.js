@@ -133,3 +133,32 @@ document.querySelectorAll('.vs-grid li').forEach((li) => li.addEventListener('cl
     }, 7000);
   }
 })();
+/* Vastu Purusha mandala: the grid draws in when seen, then four steps light in turn
+   (directions, Panchabhoota, entrance, Brahmasthan). A tap picks a step and pauses the loop for 12 s. */
+(() => {
+  'use strict';
+  const m = document.querySelector('[data-mandala]');
+  if (!m) return;
+  const chips = [...m.querySelectorAll('[data-md-step]')];
+  const caps = [...m.querySelectorAll('[data-md-cap]')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let step = 0, pausedUntil = 0, visible = false, timer = null;
+  const set = (n) => {
+    step = n; m.dataset.step = String(n);
+    chips.forEach((c, i) => c.setAttribute('aria-selected', i === n ? 'true' : 'false'));
+    caps.forEach((c, i) => { c.hidden = i !== n; });
+  };
+  chips.forEach((c, i) => c.addEventListener('click', () => {
+    pausedUntil = Date.now() + 12000; set(i);
+    window.dataLayer?.push({ event: 'mandala_step', step: c.textContent.trim() });
+  }));
+  new IntersectionObserver((es) => {
+    visible = es[0].isIntersecting;
+    if (visible) m.classList.add('is-drawn');
+    if (visible && !timer && !reduce) timer = setInterval(() => {
+      if (!visible || Date.now() < pausedUntil) return;
+      set((step + 1) % chips.length);
+    }, 4500);
+  }, { threshold: 0.35 }).observe(m);
+  if (reduce) m.classList.add('is-drawn');
+})();

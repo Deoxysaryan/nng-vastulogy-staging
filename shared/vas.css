@@ -279,3 +279,104 @@ html body.lp-vas .vh-copy h1 em { display: block; text-wrap: balance; }
 /* hero now carries the Meet block, so it grows with its copy */
 html body.lp-vas section.vh { max-height: none !important; height: auto !important; overflow: clip !important; }
 html body.lp-vas .mt-reads li { align-content: start; }
+
+/* ---------- round 4: animated Vastu Purusha mandala in the hero ---------- */
+html body.lp-vas .md { display: grid; gap: 14px; margin-top: 18px; }
+html body.lp-vas .md-fig { margin: 0; padding: 10px; border-radius: 22px; background: radial-gradient(70% 70% at 50% 45%, #FFF8EA, #F6EEDD); box-shadow: 0 0 0 1px rgb(201 162 90 / .35), 0 22px 40px -30px rgb(60 50 30 / .45); }
+html body.lp-vas .md-svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; overflow: visible; font-family: inherit; }
+html body.lp-vas .md-halo { fill: rgb(255 236 196 / .45); }
+html body.lp-vas .md-c { fill: transparent; stroke: rgb(184 138 62 / .38); stroke-width: .8; transition: fill .5s, stroke .5s; }
+html body.lp-vas .md-frame { fill: none; stroke: #B88A3E; stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; }
+html body.lp-vas .md.is-drawn .md-frame { animation: md-draw 1.6s ease forwards; }
+html body.lp-vas .md-grid { opacity: 0; transition: opacity 1.2s .5s; }
+html body.lp-vas .md.is-drawn .md-grid { opacity: 1; }
+@keyframes md-draw { to { stroke-dashoffset: 0; } }
+/* directions */
+html body.lp-vas .md-d text { text-anchor: middle; dominant-baseline: middle; }
+html body.lp-vas .md-dl { font-size: 15px; font-weight: 700; fill: #8E6828; }
+html body.lp-vas .md-dv { font-size: 13px; fill: #4A5650; }
+html body.lp-vas .md-d { opacity: .45; transition: opacity .5s; }
+html body.lp-vas .md-ray { stroke: #C9A25A; stroke-width: 1.2; stroke-dasharray: 4 5; opacity: 0; transition: opacity .5s; }
+html body.lp-vas .md[data-step="0"] .md-d { animation: md-on .6s ease both; animation-delay: calc(var(--i) * .22s); }
+html body.lp-vas .md[data-step="0"] .md-ray { opacity: .8; transition-delay: calc(var(--i) * .22s); }
+@keyframes md-on { 0% { opacity: .3; } 60% { opacity: 1; filter: drop-shadow(0 0 6px rgb(235 180 70 / .9)); } 100% { opacity: 1; } }
+/* elements */
+html body.lp-vas .md-e { opacity: .2; transition: opacity .5s; }
+html body.lp-vas .md-e path, html body.lp-vas .md-e rect, html body.lp-vas .md-e circle { fill: rgb(201 162 90 / .3); stroke: #8A5A12; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+html body.lp-vas .md-e text { font-size: 12.5px; font-weight: 600; fill: #8A5A12; text-anchor: middle; }
+html body.lp-vas .md[data-step="1"] .md-e { opacity: 1; animation: md-on .7s ease both; animation-delay: calc(var(--i) * .3s); }
+/* entrance: the 32 boundary padas run, then the door glows */
+html body.lp-vas .md[data-step="2"] .md-b { animation: md-pada 2.4s ease both; animation-delay: calc(var(--i) * 45ms); }
+@keyframes md-pada { 0% { fill: transparent; } 30% { fill: rgb(227 194 122 / .75); } 100% { fill: rgb(227 194 122 / .22); } }
+html body.lp-vas .md-door { opacity: 0; transition: opacity .5s; }
+html body.lp-vas .md-door rect { fill: #8A5A12; }
+html body.lp-vas .md-door path { fill: none; stroke: #8A5A12; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+html body.lp-vas .md[data-step="2"] .md-door { opacity: 1; transition-delay: 1.4s; filter: drop-shadow(0 0 6px rgb(235 180 70 / 1)); }
+/* Brahmasthan */
+html body.lp-vas .md-bt { font-size: 14px; font-weight: 700; fill: #8A5A12; text-anchor: middle; opacity: 0; transition: opacity .6s; }
+html body.lp-vas .md[data-step="3"] .md-br { fill: rgb(227 194 122 / .55); stroke: #B88A3E; }
+html body.lp-vas .md[data-step="3"] .md-bt { opacity: 1; }
+html body.lp-vas .md[data-step="3"] .md-e-sp { opacity: 0; }
+html body.lp-vas .md[data-step="3"] .md-grid { filter: drop-shadow(0 0 10px rgb(235 180 70 / .5)); }
+/* chips and caption */
+html body.lp-vas .md-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+html body.lp-vas .md-chips button { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 999px; background: #FFFDF7; box-shadow: 0 0 0 1px rgb(201 162 90 / .45); font: inherit; font-size: 14px; font-weight: 600; color: #10261A; cursor: pointer; text-align: left; transition: background .3s, color .3s, box-shadow .3s; }
+html body.lp-vas .md-chips button b { font-size: 12px; color: #B88A3E; }
+html body.lp-vas .md-chips button[aria-selected="true"] { background: linear-gradient(180deg, #23503D, #173628); color: #FFF8EA; box-shadow: 0 10px 20px -12px rgb(20 45 30 / .7); }
+html body.lp-vas .md-chips button[aria-selected="true"] b { color: #E3C27A; }
+html body.lp-vas .md-cap { min-height: 72px; }
+html body.lp-vas .md-cap p { margin: 0; font-size: 16px; line-height: 1.5; color: #4A5650; text-wrap: pretty; animation: md-cap .5s ease both; }
+@keyframes md-cap { from { opacity: 0; translate: 0 6px; } }
+@media (min-width: 1100px) { html body.lp-vas .md { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 22px; } html body.lp-vas .md-chips { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  html body.lp-vas .md *, html body.lp-vas .md { animation: none !important; transition: none !important; }
+  html body.lp-vas .md-frame { stroke-dashoffset: 0; } html body.lp-vas .md-grid { opacity: 1; }
+}
+/* decision rail bleeds to both screen edges on phones (it stopped 40px short on the right) */
+@media (max-width: 760px) { html body.lp-vas .vq-cards { width: calc(100% + 40px) !important; max-width: none !important; margin-left: -20px !important; margin-right: -20px !important; box-sizing: border-box; scroll-padding-inline: 20px; } }
+
+/* ---------- round 5: eight consultations as one rail of picture cards, picture on top ---------- */
+html body.lp-vas .vs-grid-8 li { display: flex !important; flex-direction: column !important; grid-template-columns: none !important; overflow: hidden; border-radius: 22px !important; }
+html body.lp-vas .vs-grid-8 .vs-pic { order: -1; width: 100% !important; height: auto !important; aspect-ratio: 4 / 3; border-radius: 0 !important; }
+html body.lp-vas .vs-grid-8 .vs-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+html body.lp-vas .vs-grid-8 .vs-text { padding: 14px 16px 18px !important; }
+html body.lp-vas .vs-grid-8 .vs-top { gap: 12px !important; }
+html body.lp-vas .vs-grid-8 .vs-top em { font-size: 20px !important; }
+html body.lp-vas .vs-grid-8 .vs-top > span { width: 38px !important; height: 38px !important; }
+html body.lp-vas .vs-grid-8 h3 { margin: 8px 0 4px !important; font-size: 20px !important; line-height: 1.2 !important; }
+html body.lp-vas .vs-grid-8 .vs-text > p:last-child { margin: 0 !important; font-size: 15px !important; line-height: 1.45 !important; }
+html body.lp-vas .vs-grid-8 .vs-go { width: 42px !important; height: 42px !important; right: 12px !important; bottom: 12px !important; }
+@media (max-width: 760px) {
+  html body.lp-vas .vs-grid-8 { display: flex !important; gap: 12px !important; overflow-x: auto; scroll-snap-type: x mandatory; width: calc(100% + 40px) !important; margin-left: -20px !important; margin-right: -20px !important; padding: 4px 20px 14px !important; box-sizing: border-box; scroll-padding-inline: 20px; scrollbar-width: none; }
+  html body.lp-vas .vs-grid-8::-webkit-scrollbar { display: none; }
+  html body.lp-vas .vs-grid-8 li { flex: 0 0 78% !important; max-width: 300px; scroll-snap-align: start; }
+}
+@media (min-width: 761px) and (max-width: 1099px) { html body.lp-vas .vs-grid-8 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (min-width: 1100px) { html body.lp-vas .vs-grid-8 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
+
+/* ---------- round 6: mandala as its own section, tighter cards on phones ---------- */
+html body.lp-vas .v-mandala { position: relative; padding: 56px 0 48px; background: radial-gradient(60% 50% at 50% 40%, rgb(255 236 196 / .6), transparent 70%), linear-gradient(180deg, #FBF6EC, #F4ECDD); }
+html body.lp-vas .vm-inner { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+html body.lp-vas .v-mandala .vh-depth-h { font-size: 30px; }
+html body.lp-vas .v-mandala .vh-depth-p { max-width: 640px; }
+@media (min-width: 1100px) {
+  html body.lp-vas .v-mandala { padding: 80px 0 72px; }
+  html body.lp-vas .v-mandala .vh-depth-h { font-size: 44px; }
+  html body.lp-vas .v-mandala .md { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 48px; }
+}
+@media (max-width: 760px) {
+  html body.lp-vas .v-mandala { padding: 40px 0 34px; }
+  html body.lp-vas .v-mandala .vh-depth-h { font-size: 27px; }
+  html body.lp-vas .v-mandala .vh-depth-p { font-size: 15.5px; }
+  html body.lp-vas .md-cap { min-height: 96px; }
+  /* decision cards: shorter picture, tighter text */
+  html body.lp-vas .vq-pic { aspect-ratio: 4 / 3 !important; height: auto !important; }
+  html body.lp-vas .vq article .v4-area { margin-bottom: 4px !important; }
+  html body.lp-vas .vq article h3 { margin: 2px 0 6px !important; font-size: 21px !important; }
+  html body.lp-vas .vq article .v4-before { font-size: 17px !important; line-height: 1.35 !important; margin: 0 0 8px !important; }
+  html body.lp-vas .vq article .v4-after-txt { font-size: 15px !important; line-height: 1.45 !important; margin: 0 0 12px !important; }
+}
+/* the services rail must not widen its column on phones */
+html body.lp-vas .vs-inner { grid-template-columns: minmax(0, 1fr) !important; }
+html body.lp-vas .vs-main { min-width: 0 !important; }
+@media (max-width: 760px) { html body.lp-vas .vq article .v4-area { margin: 14px 0 0 !important; min-height: 0 !important; padding-bottom: 0 !important; } html body.lp-vas .vq article h3 { margin-top: 4px !important; min-height: 0 !important; } }
