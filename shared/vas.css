@@ -213,3 +213,69 @@ html body.lp-vas .v-approach { position: relative; overflow: clip; }
   html body.lp-vas .vh-feats { display: none !important; }
 }
 @media (min-width: 761px) and (max-width: 900px) { html body.lp-vas .v4-hf-row { grid-template-columns: minmax(0, 1fr) !important; } }
+
+/* ---------- round 2: what she reads (meet) ---------- */
+html body.lp-vas .mt-reads { display: grid; gap: 10px; margin: 16px 0 6px; padding: 0; list-style: none; }
+html body.lp-vas .mt-reads li { position: relative; display: grid; gap: 2px; padding: 0 0 0 20px; font-size: 15px; line-height: 1.45; color: #4A5650; text-wrap: pretty; }
+html body.lp-vas .mt-reads li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #C9A25A; box-shadow: 0 0 0 3px rgb(201 162 90 / .22); }
+html body.lp-vas .mt-reads b { font-size: 15px; color: #10261A; }
+@media (min-width: 761px) { html body.lp-vas .mt-reads { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 22px; } html body.lp-vas .mt-reads li { font-size: 16px; } }
+
+/* ---------- round 2: more consultations ---------- */
+html body.lp-vas .vs-more-k { margin: 26px 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9A6C2E; }
+html body.lp-vas .vs-more { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0; padding: 0; list-style: none; }
+html body.lp-vas .vs-more a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 64px; padding: 14px 14px 14px 16px; border-radius: 16px; background: #FFFDF7; box-shadow: 0 0 0 1px rgb(201 162 90 / .45), 0 12px 24px -20px rgb(60 50 30 / .45); color: inherit; text-decoration: none; transition: transform .3s, box-shadow .3s; }
+html body.lp-vas .vs-more a:hover { transform: translateY(-2px); box-shadow: 0 0 0 1.5px #C9A25A, 0 16px 28px -20px rgb(60 50 30 / .55); }
+html body.lp-vas .vs-more em { font-style: normal; font-size: 13px; font-weight: 700; color: #C49A4A; }
+html body.lp-vas .vs-more b { display: block; font-size: 16px; line-height: 1.25; color: #10261A; }
+html body.lp-vas .vs-more small { display: block; margin-top: 3px; font-size: 14px; line-height: 1.4; color: #5E5C56; text-wrap: pretty; }
+html body.lp-vas .vs-more i { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(180deg, #23503D, #173628); color: #fff; }
+html body.lp-vas .vs-more i svg { width: 16px; height: 16px; }
+@media (min-width: 761px) { html body.lp-vas .vs-more { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+@media (min-width: 1100px) { html body.lp-vas .vs-more { grid-template-columns: repeat(4, minmax(0, 1fr)); } html body.lp-vas .vs-more a { grid-template-columns: minmax(0, 1fr) auto; } html body.lp-vas .vs-more em { grid-column: 1 / -1; } }
+
+/* ---------- round 3: one hero that carries Meet Narayani (film, badge, credentials, depth) ---------- */
+html body.lp-vas .vh-meet { background: radial-gradient(60% 55% at 55% 40%, rgb(255 236 196 / .75), transparent 72%); }
+html body.lp-vas .vh-meet .vh-rose, html body.lp-vas .vh-meet .vh-plan, html body.lp-vas .vh-meet .vh-spark { pointer-events: none; }
+html body.lp-vas .vh-meet .vh-rose { opacity: .55; }
+html body.lp-vas .vh-stage { position: absolute; z-index: 2; left: 50%; top: 4%; translate: -50% 0; width: min(380px, 62%); }
+html body.lp-vas .vh-film.v4-film { position: relative; width: 100%; aspect-ratio: 760 / 964; overflow: hidden; border-radius: 999px 999px 26px 26px; background: #F3EBDD; box-shadow: 0 0 0 6px rgb(255 253 248 / .9), 0 0 0 7px rgb(201 162 90 / .5), 0 34px 60px -34px rgb(60 50 30 / .6); }
+html body.lp-vas .vh-film.v4-film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; background: #F3EBDD; }
+html body.lp-vas .vh-film.v4-film.is-playing video { object-fit: contain; background: #10261A; }
+html body.lp-vas .vh-film .v4-film-play { bottom: 22% !important; z-index: 3; }
+html body.lp-vas .vh-meet .vh-name { position: relative !important; left: 50% !important; right: auto !important; top: auto !important; bottom: auto !important; translate: -50% 0 !important; margin-top: -30px; width: max-content; z-index: 4; }
+html body.lp-vas .vh-creds { position: absolute; z-index: 2; left: 50%; translate: -50% 0; bottom: 2%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: min(440px, 86%); margin: 0; padding: 12px 6px; list-style: none; border-radius: 18px; background: rgb(255 253 248 / .92); box-shadow: 0 0 0 1px rgb(201 162 90 / .4), 0 16px 30px -22px rgb(60 50 30 / .5); }
+html body.lp-vas .vh-creds li { display: grid; justify-items: center; gap: 2px; padding: 0 6px; text-align: center; }
+html body.lp-vas .vh-creds li + li { border-left: 1px solid rgb(201 162 90 / .35); }
+html body.lp-vas .vh-creds li > span { display: none; }
+html body.lp-vas .vh-creds strong { font-family: var(--serif); font-size: 24px; line-height: 1.1; font-weight: 500; color: #10261A; white-space: nowrap; }
+html body.lp-vas .vh-creds em { font-style: normal; font-size: 12px; line-height: 1.3; color: #5E5C56; }
+html body.lp-vas .vh-depth { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgb(201 162 90 / .35); }
+html body.lp-vas .vh-depth-k { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A6C2E; }
+html body.lp-vas .vh-depth-h { margin: 0; font-family: var(--serif); font-size: 28px; line-height: 1.15; font-weight: 500; color: #10261A; }
+html body.lp-vas .vh-depth-h em { font-style: normal; color: #A27A33; }
+html body.lp-vas .vh-depth-p { margin: 12px 0 0; font-size: 16px; line-height: 1.55; color: #4A5650; text-wrap: pretty; }
+@media (min-width: 761px) {
+  html body.lp-vas .vh-meet { bottom: 0 !important; }
+  html body.lp-vas .vh-depth-h { font-size: 32px; }
+  html body.lp-vas .vh-stage { top: 6%; }
+}
+@media (min-width: 1400px) { html body.lp-vas .vh-stage { width: 400px; } }
+@media (max-width: 760px) {
+  html body.lp-vas .vh-visual.vh-meet { height: auto !important; padding: 14px 0 0; }
+  html body.lp-vas .vh-stage { position: relative; left: auto; top: auto; translate: none; width: min(64vw, 270px); margin: 0 auto; }
+  html body.lp-vas .vh-meet .vh-rose { width: 70vw; left: -14vw; top: 2%; }
+  html body.lp-vas .vh-film .v4-film-play { bottom: 20% !important; font-size: 14px; }
+  html body.lp-vas .vh-creds { position: relative; left: auto; bottom: auto; translate: none; width: calc(100% - 40px); margin: 14px auto 0; padding: 10px 4px; }
+  html body.lp-vas .vh-creds strong { font-size: 21px; }
+  html body.lp-vas .vh-creds em { font-size: 12px; }
+  html body.lp-vas .vh-depth-h { font-size: 26px; }
+}
+/* credentials sit right under the name badge at every width */
+html body.lp-vas .vh-stage .vh-creds { position: relative !important; left: auto !important; bottom: auto !important; translate: none !important; width: 100% !important; margin: 14px 0 0 !important; }
+@media (min-width: 761px) { html body.lp-vas .vh-stage .vh-creds { width: 116% !important; margin-left: -8% !important; } }
+@media (max-width: 760px) { html body.lp-vas .vh-stage { width: min(64vw, 270px); } html body.lp-vas .vh-stage .vh-creds { width: calc(100vw - 40px) !important; margin-left: calc((100% - (100vw - 40px)) / 2) !important; } }
+html body.lp-vas .vh-copy h1 em { display: block; text-wrap: balance; }
+/* hero now carries the Meet block, so it grows with its copy */
+html body.lp-vas section.vh { max-height: none !important; height: auto !important; overflow: clip !important; }
+html body.lp-vas .mt-reads li { align-content: start; }

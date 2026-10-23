@@ -12,15 +12,15 @@
   const box = document.querySelector('[data-vtool]');
   if (!box) return;
   const Z = {
-    N: ['North zone', 'Uttar', 'Ruled by Kubera · money and new openings'],
-    NE: ['North-east zone', 'Ishanya', 'Water · prayer and clarity'],
-    E: ['East zone', 'Purva', 'Ruled by Surya and Indra · light, health, new beginnings'],
-    SE: ['South-east zone', 'Agneya', 'Fire · energy, cooking, cash flow'],
-    S: ['South zone', 'Dakshin', 'Ruled by Yama · strength, rest, reputation'],
-    SW: ['South-west zone', 'Nairutya', 'Earth · weight, stability, the head of the family'],
-    W: ['West zone', 'Paschim', 'Ruled by Varuna · gains and steady results'],
-    NW: ['North-west zone', 'Vayavya', 'Air · movement, guests, support from people'],
-    C: ['Centre of the home', 'Brahmasthan', 'Space · the open heart of the home'],
+    N: ['North zone', 'Uttar', 'Devta Kubera · wealth and new openings'],
+    NE: ['North-east zone', 'Ishanya', 'Devta Ishana · water · prayer and clarity'],
+    E: ['East zone', 'Purva', 'Devta Indra and Surya · light, health, new beginnings'],
+    SE: ['South-east zone', 'Agneya', 'Devta Agni · fire · energy, cooking, cash flow'],
+    S: ['South zone', 'Dakshin', 'Devta Yama · strength, rest, reputation'],
+    SW: ['South-west zone', 'Nairutya', 'Devta Nirriti · earth · stability, the head of the family'],
+    W: ['West zone', 'Paschim', 'Devta Varuna · gains and steady results'],
+    NW: ['North-west zone', 'Vayavya', 'Devta Vayu · air · movement, guests, support from people'],
+    C: ['Centre of the home', 'Brahmasthan', 'Devta Brahma · space · the open heart of the home'],
   };
   const G = 'Supports this room', OK = 'Works, with care', LOOK = 'Worth a closer look';
   /* [verdict, why, one change] per room and zone */
