@@ -380,3 +380,36 @@ html body.lp-vas .v-mandala .vh-depth-p { max-width: 640px; }
 html body.lp-vas .vs-inner { grid-template-columns: minmax(0, 1fr) !important; }
 html body.lp-vas .vs-main { min-width: 0 !important; }
 @media (max-width: 760px) { html body.lp-vas .vq article .v4-area { margin: 14px 0 0 !important; min-height: 0 !important; padding-bottom: 0 !important; } html body.lp-vas .vq article h3 { margin-top: 4px !important; min-height: 0 !important; } }
+
+/* ---------- round 7: full visual audit fixes ---------- */
+/* decision cards: the label kept a fixed height, which left a blank line before the heading */
+html body.lp-vas .vq article .v4-area { height: auto !important; min-height: 0 !important; }
+html body.lp-vas .vq article h3 { height: auto !important; min-height: 0 !important; }
+/* taps: every chip and header button at least 44px */
+html body.lp-vas .v4-hf-areas label, html body.lp-vas .v4-hf-areas label span { min-height: 44px !important; }
+html body.lp-vas .v4-hf-areas label span { display: inline-flex !important; align-items: center; }
+html body.lp-vas header .button-small { min-height: 44px !important; }
+/* hero badge subtitle readable */
+html body.lp-vas .vh-name small { font-size: 12px !important; letter-spacing: .14em !important; }
+/* mandala: element marks only show on their own step, so other steps read clean */
+html body.lp-vas .md-e { opacity: 0 !important; }
+html body.lp-vas .md[data-step="1"] .md-e { opacity: 1 !important; }
+html body.lp-vas .md-rays { opacity: .6; }
+@media (min-width: 1100px) {
+  html body.lp-vas .v-mandala .md { grid-template-columns: minmax(0, 460px) minmax(0, 440px) !important; justify-content: start; gap: 56px !important; }
+  html body.lp-vas .md-cap p { font-size: 17px; }
+}
+/* direction check: copy left, tool right on wide screens (the floor-plan figure is gone) */
+html body.lp-vas .v-approach { grid-template-columns: minmax(0, 1fr) !important; }
+@media (min-width: 1100px) {
+  html body.lp-vas .v-approach .approach-copy { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); column-gap: 64px; align-items: start; max-width: none !important; width: 100% !important; }
+  html body.lp-vas .v-approach .approach-copy > :not(.v-tool) { grid-column: 1; }
+  html body.lp-vas .v-approach .approach-copy > .v-tool { grid-column: 2; grid-row: 1 / span 6; margin-top: 0 !important; }
+}
+@media (min-width: 761px) and (max-width: 1099px) { html body.lp-vas .v-approach .approach-copy { max-width: 640px !important; margin-inline: auto !important; } }
+/* the card label was flex-growing to fill spare height; the CTA takes the spare space instead */
+html body.lp-vas .vq article .v4-area, html body.lp-vas .vq article h3, html body.lp-vas .vq article .v4-before, html body.lp-vas .vq article .v4-after-txt { flex: 0 0 auto !important; }
+html body.lp-vas .vq article .v4-me { margin-top: auto !important; }
+/* rails: a sideways swipe never triggers browser back, every rail snaps to the card start */
+html body.lp-vas :is(.v4-quotes, .v4-mo-grid, .vq-cards, .vs-grid-8, .cv5-list) { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+@media (max-width: 760px) { html body.lp-vas :is(.vq-cards, .cv5-list) > * { scroll-snap-align: start !important; } html body.lp-vas :is(.vq-cards, .cv5-list) { scroll-padding-inline: 20px; } }

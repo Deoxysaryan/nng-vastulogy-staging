@@ -103,7 +103,7 @@ document.querySelectorAll('.vs-grid li').forEach((li) => li.addEventListener('cl
 (() => {
   const seen = new Set();
   const io = new IntersectionObserver((es) => { es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target))); document.body.classList.toggle('n-calc-in-view', seen.size > 0); }, { threshold: 0.2 });
-  document.querySelectorAll('.v-tool, .vs-grid, .wy4-cards, .fq2-list, .mt-facts, .vq-cards').forEach((el) => io.observe(el));
+  document.querySelectorAll('.v-tool, .vs-grid, .wy4-cards, .fq2-list, .mt-facts, .vq-cards, .v4-mo-grid, .md, .vh-stage').forEach((el) => io.observe(el));
 })();
 /* Motion: steps light up in turn; promises glow in turn; decision-card rail moves on phones. */
 (() => {
