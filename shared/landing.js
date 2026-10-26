@@ -71,7 +71,7 @@
     const artObserver=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){e.target.classList.add('is-seen');artObserver.unobserve(e.target);}},{threshold:.25});
     document.querySelectorAll('[data-motion]').forEach(e=>artObserver.observe(e));
     const sticky=document.querySelector('.mobile-cta');let heroVisible=true,enquiryVisible=false,footerVisible=false;
-    const stickyObserver=new IntersectionObserver(entries=>{for(const e of entries){if(e.target.classList.contains('hero-actions'))heroVisible=e.isIntersecting;if(e.target.classList.contains('enquiry-section'))enquiryVisible=e.isIntersecting;if(e.target.classList.contains('footer'))footerVisible=e.isIntersecting;}sticky.hidden=heroVisible||enquiryVisible||footerVisible;},{threshold:0});
-    ['.hero-actions','.enquiry-section','.footer'].forEach(s=>stickyObserver.observe(document.querySelector(s)));
+    const stickyObserver=new IntersectionObserver(entries=>{for(const e of entries){if(e.target.classList.contains('hero-actions'))heroVisible=e.isIntersecting;if(e.target.classList.contains('enquiry-section'))enquiryVisible=e.isIntersecting;if(e.target.classList.contains('footer'))footerVisible=e.isIntersecting;}if(sticky)sticky.hidden=heroVisible||enquiryVisible||footerVisible;},{threshold:0});
+    ['.hero-actions','.enquiry-section','.footer'].forEach(s=>{const el=document.querySelector(s);if(el)stickyObserver.observe(el);});
   }
 })();
